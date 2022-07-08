@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magic Quiz</title>
 
+
+    <!--CSS BS-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+    />
+  
+
     <!--TIPOGRAFIAS-->
     <!--Cinzel Decorative-->  <!--para copiar en css font-family: 'Cinzel Decorative', cursive;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,160 +32,152 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!--Metamorphous-->  <!--para copiar en css font-family: 'Libre Baskerville', serif;-->
+    <!--Metamorphous-->  <!--para copiar en css font-family: 'Metamorphous', serif;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
 
-    <!--CSS BS-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-
     <!--css-->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css"/>
+
   </head>
 
   <body>
     <!--DIV CONTENEDOR PRINCIPAL-->
     <div class="container__general">
+
       <!--HEADER-->
-      <header>
-        <nav class="navbar bg-light">
-          <div class="container">
-            <a class="navbar-brand" href="">
-              <img src="" alt="" width="" height="" />
-            </a>
-            <button id="curiosidades">Curiosidades</button>
+
+    <header class="header headerAbout">
+      <nav class="navBar-modificada">
+          <div class="logo">
+              <a class="navbar-brand"><img src="./img/Home1.png" alt="" width="60" height="60"></a>   
           </div>
-        </nav>
-      </header>
+      </nav>
+
 
       <!--MAIN H1-->
-      <main class="container">
-        <div class="titulo">
-          <h1>WELCOME TO THE MAGIC QUIZ</h1>
+      <main class="container mainIndex">
+        <div class="titulo main__div">
+          <h1 class="h1">WELCOME TO THE MAGIC QUIZ</h1>
         </div>
       </main>
 
       <!--SECTION 1-->
       <section class="section1 formCasas cambios">
-        <div class="">
-          <p>Nos gustaría conocerte un poquito más!</p>
-        </div>
+        <!--
           <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedorTarjetas"></div>
-          <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer"></div> 
+          <div class="row row-cols-1 row-cols-md-3 g-4" id="cardContainer"></div> -->
 
         <form>
+
+          <div class="div_form container_form">
           <!--ingresa tu nombre-->
 
-          <div class="col-sm-2">
-            <label for="autoSizingInput">Cuál es tu nombre?</label>
-            <input
-              type="text"
-              class="form-control"
-              id="autoSizingInput"
-              placeholder="Hermione..."
-              name="nombre"
-              id="nombreIngresado"
-            />
+            <div class="col-sm-2 div_usuario">
+              <label for="autoSizingInput">Cuál es tu nombre?</label>
+              <input
+                type="text"
+                class="form-control"
+                id="autoSizingInput"
+                placeholder="Hermione..."
+                name="nombre"
+                id="nombreIngresado"
+              />
+            </div>
+
+            <!--OPCIONES DE CASAS-->
+
+            <fieldset class="row mb-3 fieldset_usuario" id="eleccionCasas">
+              <legend class="col-form-label col-sm-7 pt-0 legend_usuario">
+                A qué casa perteneces? En caso de ser un muggle, puedes
+                simplemente PROBAR TU SUERTE, pero debo advertirte que no te será
+                fácil superar los desafíos.
+              </legend>
+
+              <div class="col-sm-4">
+                <!--primera opción-->
+                <div class="form-check">
+                  <input
+                    class="form-check-input check"
+                    type="radio"
+                    name="gridRadios"
+                    id="casa1"
+                    value="Gryffindor"
+                    checked
+                  />
+                  <label class="form-check-label" for="gridRadios1">
+                    Gryffindor
+                  </label>
+                </div>
+                <!--segunda opción-->
+                <div class="form-check">
+                  <input
+                    class="form-check-input check"
+                    type="radio"
+                    name="gridRadios"
+                    id="casa2"
+                    value="Hufflepuff"
+                  />
+                  <label class="form-check-label" for="gridRadios2">
+                    Hufflepuff
+                  </label>
+                </div>
+
+                <!--tercer opción-->
+                <div class="form-check">
+                  <input
+                    class="form-check-input check"
+                    type="radio"
+                    name="gridRadios"
+                    id="casa3"
+                    value="Ravenclaw"
+                  />
+                  <label class="form-check-label" for="gridRadios3">
+                    Ravenclaw
+                  </label>
+                </div>
+
+                <!--cuarta opción-->
+                <div class="form-check">
+                  <input
+                    class="form-check-input check"
+                    type="radio"
+                    name="gridRadios"
+                    id="casa4"
+                    value="Slytherin"
+                  />
+                  <label class="form-check-label" for="gridRadios4">
+                    Slytherin
+                  </label>
+                </div>
+
+                <!--quinta opción-->
+                <div class="form-check">
+                  <input
+                    class="form-check-input check"
+                    type="radio"
+                    name="gridRadios"
+                    id="casa5"
+                    value="Mundo muggle"
+                  />
+                  <label class="form-check-label" for="gridRadios5">
+                    Mundo muggle
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
 
-          <!--OPCIONES DE CASAS-->
-
-          <fieldset class="row mb-3" id="eleccionCasas">
-            <legend class="col-form-label col-sm-2 pt-0">
-              A qué casa perteneces? En caso de ser un muggle, puedes
-              simplemente PROBAR TU SUERTE, pero debo advertirte que no te será
-              fácil superar los desafíos.
-            </legend>
-
-            <div class="col-sm-2">
-              <!--primera opción-->
-              <div class="form-check">
-                <input
-                  class="form-check-input check"
-                  type="radio"
-                  name="gridRadios"
-                  id="casa1"
-                  value="Gryffindor"
-                  checked
-                />
-                <label class="form-check-label" for="gridRadios1">
-                  Gryffindor
-                </label>
-              </div>
-              <!--segunda opción-->
-              <div class="form-check">
-                <input
-                  class="form-check-input check"
-                  type="radio"
-                  name="gridRadios"
-                  id="casa2"
-                  value="Hufflepuff"
-                />
-                <label class="form-check-label" for="gridRadios2">
-                  Hufflepuff
-                </label>
-              </div>
-
-              <!--tercer opción-->
-              <div class="form-check">
-                <input
-                  class="form-check-input check"
-                  type="radio"
-                  name="gridRadios"
-                  id="casa3"
-                  value="Ravenclaw"
-                />
-                <label class="form-check-label" for="gridRadios3">
-                  Ravenclaw
-                </label>
-              </div>
-
-              <!--cuarta opción-->
-              <div class="form-check">
-                <input
-                  class="form-check-input check"
-                  type="radio"
-                  name="gridRadios"
-                  id="casa4"
-                  value="Slytherin"
-                />
-                <label class="form-check-label" for="gridRadios4">
-                  Slytherin
-                </label>
-              </div>
-
-              <!--quinta opción-->
-              <div class="form-check">
-                <input
-                  class="form-check-input check"
-                  type="radio"
-                  name="gridRadios"
-                  id="casa5"
-                  value="Mundo muggle"
-                />
-                <label class="form-check-label" for="gridRadios5">
-                  Mundo muggle
-                </label>
-              </div>
-            </div>
-          </fieldset>
-          <!--botón de envío de información
-                <button type="submit" class="btn btn-primary" id="ingresar">Ingresar</button>-->
         </form>
       </section>
 
       <!--SECTION 2-->
       <!--Pregunta 1-->
-      <section class="disNon cambios">
-        <form>
+      <section class="disNon cambios section_pregunta1">
+        <form class="container_pregunta1">
           <fieldset class="row mb-3">
-            <div>
+            <div class="estilo_pregunta1">
               <p>
                 Qué edad tenia Harry Potter cuando recibió su primer carta de
                 Howarts?
@@ -191,7 +193,7 @@
                   id="gridRadios1"
                   value="answer1"
                 />
-                <label class="form-check-label" for="gridRadios1"> 10 </label>
+                <label class="form-check-label estilo_pregunta1" for="gridRadios1"> 10 </label>
               </div>
               <!--segunda opción-->
               <div class="form-check">
@@ -202,7 +204,7 @@
                   id="gridRadios2"
                   value="answer2"
                 />
-                <label class="form-check-label" for="gridRadios2"> 11 </label>
+                <label class="form-check-label estilo_pregunta1" for="gridRadios2"> 11 </label>
               </div>
 
               <!--tercer opción-->
@@ -214,7 +216,7 @@
                   id="gridRadios3"
                   value="answer3"
                 />
-                <label class="form-check-label" for="gridRadios3"> 12 </label>
+                <label class="form-check-label estilo_pregunta1" for="gridRadios3"> 12 </label>
               </div>
             </div>
           </fieldset>
@@ -226,11 +228,11 @@
 
       <!--SECTION 3-->
       <!--Pregunta 2-->
-      <section class="disNon2 cambios" id="pregunta2">
+      <section class="disNon2 cambios section_pregunta2" id="pregunta2">
         <!-- Agregue este id, para poder agregarle un Style a la etiqueta SECTION -->
-        <form>
+        <form class="container_pregunta2">
           <fieldset class="row mb-3">
-            <div>
+            <div class="estilo_pregunta2">
               <p>
                 Qué criatura se presenta en la casa de los tíos de Harry para
                 impedir que vaya al colegio?
@@ -247,7 +249,7 @@
                   value="answer4"
                   checked
                 />
-                <label class="form-check-label" for="gridRadios4">
+                <label class="form-check-label estilo_pregunta2" for="gridRadios4">
                   Una Acromántula
                 </label>
               </div>
@@ -260,7 +262,7 @@
                   id="gridRadios5"
                   value="answer5"
                 />
-                <label class="form-check-label" for="gridRadios5">
+                <label class="form-check-label estilo_pregunta2" for="gridRadios5">
                   Un Elfo
                 </label>
               </div>
@@ -274,25 +276,21 @@
                   id="gridRadios6"
                   value="answer6"
                 />
-                <label class="form-check-label" for="gridRadios6">
+                <label class="form-check-label estilo_pregunta2" for="gridRadios6">
                   Un Gnomo
                 </label>
               </div>
             </div>
           </fieldset>
-          <!--botón de envío de información
-          <button type="submit" class="btn btn-primary" id="enviar">
-            Siguiente
-          </button>-->
         </form>
       </section>
 
-      <!--SECTION 5-->
+      <!--SECTION 4-->
       <!--Pregunta 3-->
-      <section class="disNon3 cambios" id="pregunta3">
-        <form>
+      <section class="disNon3 cambios section_pregunta3" id="pregunta3">
+        <form class="container_pregunta3">
           <fieldset class="row mb-3">
-            <div>
+            <div class="estilo_pregunta3">
               <p>
                 A quién debe salvar de la muerte Harry en su tercer año escolar?
               </p>
@@ -308,7 +306,7 @@
                   value="answer7"
                   
                 />
-                <label class="form-check-label" for="gridRadios7">
+                <label class="form-check-label estilo_pregunta3" for="gridRadios7">
                   Su padrino y un Hipogrifo
                 </label>
               </div>
@@ -321,7 +319,7 @@
                   id="gridRadios8"
                   value="answer8"
                 />
-                <label class="form-check-label" for="gridRadios8">
+                <label class="form-check-label estilo_pregunta3" for="gridRadios8">
                   Su tio y un Hipogrifo
                 </label>
               </div>
@@ -335,25 +333,473 @@
                   id="gridRadios9"
                   value="answer9"
                 />
-                <label class="form-check-label" for="gridRadios9">
+                <label class="form-check-label estilo_pregunta3" for="gridRadios9">
                   Su mejor amigo y un Elfo
                 </label>
               </div>
+
             </div>
+
           </fieldset>
-          <!--botón de envío de información
-          <button type="submit" class="btn btn-primary" id="enviar">
-            Siguente
-          </button>-->
+
         </form>
+
       </section>
+
+            <!--SECTION 5-->
+      <!--Pregunta 4-->
+      <section class="disNon4 cambios section_pregunta4" id="pregunta4">
+        <form class="container_pregunta4">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta4">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check4 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios10"
+                  value="answer10"
+                  
+                />
+                <label class="form-check-label estilo_pregunta4" for="gridRadios10">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check4 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios11"
+                  value="answer11"
+                />
+                <label class="form-check-label estilo_pregunta4" for="gridRadios11">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check4 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios12"
+                  value="answer12"
+                />
+                <label class="form-check-label estilo_pregunta4" for="gridRadios12">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+                  <!--SECTION 6-->
+      <!--Pregunta 5-->
+      <section class="disNon5 cambios section_pregunta5" id="pregunta5">
+        <form class="container_pregunta5">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta5">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check5 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios13"
+                  value="answer13"
+                  
+                />
+                <label class="form-check-label estilo_pregunta5" for="gridRadios13">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check5 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios14"
+                  value="answer14"
+                />
+                <label class="form-check-label estilo_pregunta5" for="gridRadios14">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check5 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios15"
+                  value="answer15"
+                />
+                <label class="form-check-label estilo_pregunta5" for="gridRadios15">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+                        <!--SECTION 7-->
+      <!--Pregunta 6-->
+      <section class="disNon6 cambios section_pregunta6" id="pregunta6">
+        <form class="container_pregunta6">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta6">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check6 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios16"
+                  value="answer16"
+                  
+                />
+                <label class="form-check-label estilo_pregunta6" for="gridRadios16">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check6 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios17"
+                  value="answer17"
+                />
+                <label class="form-check-label estilo_pregunta6" for="gridRadios17">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check6 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios18"
+                  value="answer18"
+                />
+                <label class="form-check-label estilo_pregunta6" for="gridRadios18">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+                              <!--SECTION 8-->
+      <!--Pregunta 7-->
+      <section class="disNon7 cambios section_pregunta7" id="pregunta7">
+        <form class="container_pregunta7">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta7">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check7 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios19"
+                  value="answer19"
+                  
+                />
+                <label class="form-check-label estilo_pregunta7" for="gridRadios19">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check7 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios20"
+                  value="answer20"
+                />
+                <label class="form-check-label estilo_pregunta7" for="gridRadios20">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check7 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios21"
+                  value="answer21"
+                />
+                <label class="form-check-label estilo_pregunta7" for="gridRadios21">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+
+                                    <!--SECTION 9-->
+      <!--Pregunta 8-->
+      <section class="disNon8 cambios section_pregunta8" id="pregunta8">
+        <form class="container_pregunta8">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta8">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check8 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios22"
+                  value="answer22"
+                  
+                />
+                <label class="form-check-label estilo_pregunta8" for="gridRadios22">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check8 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios23"
+                  value="answer23"
+                />
+                <label class="form-check-label estilo_pregunta8" for="gridRadios23">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check8 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios24"
+                  value="answer24"
+                />
+                <label class="form-check-label estilo_pregunta8" for="gridRadios24">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+                                          <!--SECTION 10-->
+      <!--Pregunta 9-->
+      <section class="disNon9 cambios section_pregunta9" id="pregunta9">
+        <form class="container_pregunta9">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta9">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check9 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios25"
+                  value="answer25"
+                  
+                />
+                <label class="form-check-label estilo_pregunta9" for="gridRadios25">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check9 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios26"
+                  value="answer26"
+                />
+                <label class="form-check-label estilo_pregunta9" for="gridRadios26">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check9 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios27"
+                  value="answer27"
+                />
+                <label class="form-check-label estilo_pregunta9" for="gridRadios27">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+                                                <!--SECTION 11-->
+      <!--Pregunta 10-->
+      <section class="disNon10 cambios section_pregunta10" id="pregunta10">
+        <form class="container_pregunta10">
+          <fieldset class="row mb-3">
+            <div class="estilo_pregunta10">
+              <p>
+                A quién debe salvar de la muerte Harry en su tercer año escolar?
+              </p>
+            </div>
+            <div class="col-sm-10">
+              <!--primera opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check10 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios28"
+                  value="answer28"
+                  
+                />
+                <label class="form-check-label estilo_pregunta10" for="gridRadios28">
+                  Su padrino y un Hipogrifo
+                </label>
+              </div>
+              <!--segunda opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check10 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios29"
+                  value="answer29"
+                />
+                <label class="form-check-label estilo_pregunta10" for="gridRadios29">
+                  Su tio y un Hipogrifo
+                </label>
+              </div>
+
+              <!--tercer opción-->
+              <div class="form-check">
+                <input
+                  class="form-check-input check10 valor"
+                  type="radio"
+                  name="gridRadios"
+                  id="gridRadios30"
+                  value="answer30"
+                />
+                <label class="form-check-label estilo_pregunta10" for="gridRadios30">
+                  Su mejor amigo y un Elfo
+                </label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </form>
+
+      </section>
+
+
+
+
+
+
+
 
       
 
-      <!--FOOTER-->
-      <footer>
-        <div></div>
-      </footer>
+<!--footer-->
+<footer>
+  <div class="container-fluid restas">
+      <div class="row footer">
+          <div class="divDerechos">
+              <p>PAGINA CREADA POR FAN DE HARRY POTTER  | ividomin@gmail.com</p>
+          </div>
+      </div>
+  </div>
+  
+</footer>
 
       <!--SCRIPT BS-->
       <script

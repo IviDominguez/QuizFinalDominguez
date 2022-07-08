@@ -1,49 +1,4 @@
-//---------------------------CURIOSIDADES-----------------------------------------
 
-/*Solo me funciona una vez al cargar la pag,
-y cuando abro el boton de curiosidades no se cierra luego...será por el async y await?*/
-
-const contenedor = document.querySelector("#contenedorTarjetas");
-
-const btnCuriosidades = document.querySelector("#curiosidades");
-const btnSalir = document.querySelector("#salir");
-
-function crearHTML(array) {
-  contenedor.innerHTML = "";
-  array.forEach((info) => {
-    const tarjeta = `
-            <div class="col" id="curiosidad" style="block">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Sabías que...?</h5>
-                        <p class="card-text">${info.contenido}</p>
-                    </div>
-                </div>
-            </div>`;
-    contenedor.innerHTML += tarjeta;
-  });
-}
-
-async function traerInfo() {
-  const respuesta = await fetch(
-    "https://fedeperin-harry-potter-api.herokuapp.com/info"
-  );
-  const info = await respuesta.json();
-  crearHTML(info);
-}
-
-btnCuriosidades.addEventListener("click", () => {//MOSTAR CURIOSIDADES
-  traerInfo();//AGREGO LA PROPIEDAD ESTILO AL HTML(BLOCK = MOSTRAR) y (NONE= OCULTAR)
-  document.getElementById("salir").style.display = "block"; //MOSTAR BOTON SALIR
-  document.getElementById("contenedorTarjetas").style.display = "block";//MOSTAR INFO
-  document.getElementById("curiosidades").style.display = "none";//OCULTO BOTON CURIOSIDADAES
-});
-
-btnSalir.addEventListener("click", () => {//OCULTAR CURIOSIDADES
-  document.getElementById("curiosidades").style.display = "block";//MUESTO BOTON CURIOSIDADAES
-  document.getElementById("salir").style.display = "none";//OCULTO BOTON SALIR
-  document.getElementById("contenedorTarjetas").style.display = "none";//OCULTO INFO
-});
 
 //--------------------------------FORM INFO CASAS----------------------------------------------
 
@@ -80,10 +35,10 @@ function validarDatos(e) {
   if (nombre.value == "") {
     alert("Debes ingresar tu nombre y elige una casa para enviar información");
   } else {
-    casaSelect = btn.value;
+    casaSelect = btn.value; 
 
-    let user = nombre.value;
-    let casa = casaSelect;
+    let user = nombre.value; 
+    let casa = casaSelect; 
 
     //MANDAR INFO AL LOCALSTORAGE
     const usuario = {
@@ -91,7 +46,7 @@ function validarDatos(e) {
       casa: casa,
     };
 
-    localStorage.setItem("usuario", JSON.stringify(usuario));
+    localStorage.setItem("usuario", JSON.stringify(usuario)); 
   }
   swal
     .fire({
@@ -242,9 +197,8 @@ function validarCheck2(e) {
 }
 
 //---------------------------TERCER PREGUNTA---------------------------------------------------------------
-//No encuentro el error por el que no me registra la respuesta.
 
-let check3 = document.getElementsByClassName("check3"); // FALTO AGREGAR EN EL HTML LA CLASE CHECK3, por la cual no detectaba ningun boton
+let check3 = document.getElementsByClassName("check3"); 
 let answer7 = document.getElementById("gridRadios7");
 let answer8 = document.getElementsByClassName("answer8");
 let answer9 = document.getElementsByClassName("answer9");
@@ -319,10 +273,378 @@ function validarCheck3(e) {
 }
 
 
+//---------------------------CUARTA PREGUNTA---------------------------------------------------------------
 
-let userAnswer1 = validarCheck1;
+let check4 = document.getElementsByClassName("check4"); 
+let answer10 = document.getElementById("gridRadios10");
+let answer11 = document.getElementsByClassName("answer11");
+let answer12 = document.getElementsByClassName("answer12");
+
+function recuperarQ4(storage) {
+  let q4InStorage = JSON.parse(storage.getItem("question4"));
+  return q4InStorage;
+}
+
+function guardado4(question4) {
+  if (question4) {
+    mostrarPregunta4(cambios, "disNon4");
+  }
+}
+
+function mostrarPregunta4(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox4 of check4) {
+  checkbox4.onclick = validarCheck4;
+}
+
+function validarCheck4(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta5(cambios, "disNon5");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta5(cambios, "disNon5");
+          let pregCinco = document.getElementById("pregunta5");
+          pregCinco.style.display = "block";
+          let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq4 = {      //reveer respuesta correcta para guardarla
+    answer7: 10,
+    answer8: 0,
+    answer9: 0,
+  };
+  localStorage.setItem("valorAq4", JSON.stringify(valorAq4));
+}
+
+
+
+//---------------------------QUINTA PREGUNTA---------------------------------------------------------------
+
+let check5 = document.getElementsByClassName("check5"); 
+let answer13 = document.getElementById("gridRadios13");
+let answer14 = document.getElementsByClassName("answer14");
+let answer15 = document.getElementsByClassName("answer15");
+
+function recuperarQ5(storage) {
+  let q5InStorage = JSON.parse(storage.getItem("question5"));
+  return q5InStorage;
+}
+
+function guardado5(question5) {
+  if (question5) {
+    mostrarPregunta5(cambios, "disNon5");
+  }
+}
+
+function mostrarPregunta5(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox5 of check5) {
+  checkbox5.onclick = validarCheck5;
+}
+
+function validarCheck5(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta6(cambios, "disNon6");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregCinco = document.getElementById("pregunta5");
+          pregCinco.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta6(cambios, "disNon6");
+          let pregSeis = document.getElementById("pregunta6");
+          pregSeis.style.display = "block";
+          let pregCinco = document.getElementById("pregunta5");
+          pregCinco.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq5 = {      //reveer respuesta correcta para guardarla
+    answer7: 10,
+    answer8: 0,
+    answer9: 0,
+  };
+  localStorage.setItem("valorAq5", JSON.stringify(valorAq5));
+}
+
+
+
+//---------------------------SEXTA PREGUNTA---------------------------------------------------------------
+
+let check6 = document.getElementsByClassName("check6"); 
+let answer16 = document.getElementById("gridRadios16");
+let answer17 = document.getElementsByClassName("answer17");
+let answer18 = document.getElementsByClassName("answer18");
+
+function recuperarQ6(storage) {
+  let q6InStorage = JSON.parse(storage.getItem("question6"));
+  return q6InStorage;
+}
+
+function guardado6(question6) {
+  if (question6) {
+    mostrarPregunta6(cambios, "disNon6");
+  }
+}
+
+function mostrarPregunta6(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox6 of check6) {
+  checkbox6.onclick = validarCheck6;
+}
+
+function validarCheck6(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta7(cambios, "disNon7");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregSeis = document.getElementById("pregunta6");
+          pregSeis.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta7(cambios, "disNon7");
+          let pregSiete = document.getElementById("pregunta7");
+          pregSiete.style.display = "block";
+          let pregSeis = document.getElementById("pregunta6");
+          pregSeis.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq6 = {      //reveer respuesta correcta para guardarla
+    answer7: 10,
+    answer8: 0,
+    answer9: 0,
+  };
+  localStorage.setItem("valorAq6", JSON.stringify(valorAq6));
+}
+
+
+//---------------------------SEPTIMA PREGUNTA---------------------------------------------------------------
+
+let check7 = document.getElementsByClassName("check7"); 
+let answer19 = document.getElementById("gridRadios19");
+let answer20 = document.getElementsByClassName("answer20");
+let answer21 = document.getElementsByClassName("answer21");
+
+function recuperarQ7(storage) {
+  let q7InStorage = JSON.parse(storage.getItem("question7"));
+  return q7InStorage;
+}
+
+function guardado7(question7) {
+  if (question7) {
+    mostrarPregunta7(cambios, "disNon7");
+  }
+}
+
+function mostrarPregunta7(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox7 of check7) {
+  checkbox7.onclick = validarCheck7;
+}
+
+function validarCheck7(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta8(cambios, "disNon8");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregSiete = document.getElementById("pregunta7");
+          pregSiete.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta8(cambios, "disNon8");
+          let pregOcho = document.getElementById("pregunta8");
+          pregOcho.style.display = "block";
+          let pregSiete = document.getElementById("pregunta7");
+          pregSiete.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq7 = {      //reveer respuesta correcta para guardarla
+    answer7: 10,
+    answer8: 0,
+    answer9: 0,
+  };
+  localStorage.setItem("valorAq7", JSON.stringify(valorAq7));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*let userAnswer1 = validarCheck1;
 let userAnswer2 = validarCheck2;
 let userAnswer3 = validarCheck3;
 
 let resultado = validarCheck1 + validarCheck2 + validarCheck3;
-return resultado
+return resultado*/
+
+
+
+
+
+//---------------------------CURIOSIDADES-----------------------------------------
+
+
+const contenedor = document.querySelector("#contenedorTarjetas");
+
+const btnCuriosidades = document.querySelector("#curiosidades");
+const btnSalir = document.querySelector("#salir");
+
+function crearHTML(array) {
+  contenedor.innerHTML = "";
+  array.forEach((info) => {
+    const tarjeta = `
+            <div class="col" id="curiosidad" style="block">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Sabías que...?</h5>
+                        <p class="card-text">${info.contenido}</p>
+                    </div>
+                </div>
+            </div>`;
+    contenedor.innerHTML += tarjeta;
+  });
+}
+
+async function traerInfo() {
+  const respuesta = await fetch(
+    "https://fedeperin-harry-potter-api.herokuapp.com/info"
+  );
+  const info = await respuesta.json();
+  crearHTML(info);
+}
+
+/*btnCuriosidades.addEventListener("click", () => {//MOSTAR CURIOSIDADES
+  traerInfo();//AGREGO LA PROPIEDAD ESTILO AL HTML(BLOCK = MOSTRAR) y (NONE= OCULTAR)
+  document.getElementById("salir").style.display = "block"; //MOSTAR BOTON SALIR
+  document.getElementById("contenedorTarjetas").style.display = "block";//MOSTAR INFO
+  document.getElementById("curiosidades").style.display = "none";//OCULTO BOTON CURIOSIDADAES
+});
+
+btnSalir.addEventListener("click", () => {//OCULTAR CURIOSIDADES
+  document.getElementById("curiosidades").style.display = "block";//MUESTO BOTON CURIOSIDADAES
+  document.getElementById("salir").style.display = "none";//OCULTO BOTON SALIR
+  document.getElementById("contenedorTarjetas").style.display = "none";//OCULTO INFO
+});*/

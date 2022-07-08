@@ -4,9 +4,52 @@
 }
 
 .container__general{
-    background-color: antiquewhite;
-    /*background-image: url("../img/mapa2.jpg");*/
+    background-image: url(../img/fondoPapel.jpg);
+    /* background-color: antiquewhite;*/
 
+}
+
+
+/*INDEX*/
+/* header */
+/*NAVBAR BS*/
+.navBar-modificada{
+    background-color: black;
+    height: 5rem;
+    padding-top: 0.5rem;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+}
+
+/*main INDEX    min-height: calc(100vh - 276px);*/
+.mainIndex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 3rem;
+
+}
+.main__div{
+    width: 60rem;
+
+}
+
+.h1{
+    color: black;
+    font-size: 60px;
+    font-family: 'Cinzel Decorative', sans-serif;
+    font-weight: 700;
+    text-align: center;
 }
 
 .titulo{
@@ -15,6 +58,9 @@
     justify-content: center;
     align-items: center;
 }
+
+
+/*SECTION1*/
 
 .section1{
     display: flex;
@@ -25,11 +71,356 @@
 
 .div_form{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.container_form{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+    background-image: url(../img/castillo1.jpg);
+}
+
+.div_usuario{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3rem 0 0 3rem;
+    margin: 0 1rem 0 2rem;
+
 }
+
+.legend_usuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fieldset_usuario{
+    margin: 0 -4rem 0 2rem;
+}
+
+
+/*SECTION 2 PREGUNTA 1*/
+
+.section_pregunta1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta1{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta1{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon{
+    display: none;
+}
+
+
+/*SECTION 3 PREGUNTA 2*/
+
+.section_pregunta2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta2{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta2{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon2{
+    display: none;
+}
+
+
+/*SECTION 4 PREGUNTA 3*/
+
+.section_pregunta3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta3{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta3{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon3{
+    display: none;
+}
+
+
+/*SECTION 5 PREGUNTA 4*/
+
+.section_pregunta4{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta4{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta4{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon4{
+    display: none;
+}
+
+/*SECTION 6 PREGUNTA 5*/
+
+.section_pregunta5{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta5{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta5{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon5{
+    display: none;
+}
+
+
+/*SECTION 7 PREGUNTA 6*/
+
+.section_pregunta6{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta6{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta6{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon6{
+    display: none;
+}
+
+
+/*SECTION 8 PREGUNTA 7*/
+
+.section_pregunta7{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta7{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta7{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon7{
+    display: none;
+}
+
+
+/*SECTION 9 PREGUNTA 8*/
+
+.section_pregunta8{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta8{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta8{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon8{
+    display: none;
+}
+
+
+/*SECTION 10 PREGUNTA 9*/
+
+.section_pregunta9{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta9{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta9{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon9{
+    display: none;
+}
+
+
+/*SECTION 11 PREGUNTA 10*/
+
+.section_pregunta10{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_pregunta10{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 50rem;
+    height: 16rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_pregunta10{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+.disNon10{
+    display: none;
+}
+
+
+
+
 
 .firstMsn{
 
@@ -50,12 +441,58 @@
 }
 
 
-.disNon{
-    display: none;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer estilo INDEX*/
+
+.footer{
+    background-color: black;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 0 1rem;
 }
-.disNon2{
-    display: none;
+.nombre{
+    color: rgb(236, 203, 159);
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 500;
 }
-.disNon3{
-    display: none;
+.div-parrafo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
 }
+
+.divDerechos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 0 1rem;
+}
+.divDerechos p{
+    color: rgb(236, 203, 159);
+    font-size: 10px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 400;
+    padding: 0 -12px;
+}
+
