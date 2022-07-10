@@ -33,7 +33,7 @@ function validarDatos(e) {
   btn = e.target;
 
   if (nombre.value == "") {
-    alert("Debes ingresar tu nombre y elige una casa para enviar información");
+    alert("Debes ingresar tu nombre y elegir una casa para enviar información!");
   } else {
     casaSelect = btn.value; 
 
@@ -55,6 +55,7 @@ function validarDatos(e) {
         "Esperamos que puedas probar tus conocimientos y sumar puntos para " +
         `${casaSelect}`,
       confirmButtonText: "Comencemos!",
+      confirmButtonColor: "#D49D73",
     })
     .then((result) => {
       if (result.isConfirmed) {
@@ -65,31 +66,36 @@ function validarDatos(e) {
 
 //---------------------------PRIMER PREGUNTA----------------------------------------------------------------
 let check1 = document.getElementsByClassName("check1");
-let answer1 = document.getElementById("gridRadios1"); // CAMBIE EL LLAMADO POR EL ID, para tomar la informacion del checkbox correcta.
+let answer1 = document.getElementById("gridRadios1");
 let answer2 = document.getElementsByClassName("answer2");
 let answer3 = document.getElementsByClassName("answer3");
 
+
+
 function recuperarQ1(storage) {
-  let q1InStorage = JSON.parse(storage.getItem("question1"));
+  let q1InStorage = JSON.parse(storage.getItem("validarCheck1"));
   return q1InStorage;
 }
+
+
 
 for (const checkbox1 of check1) {
   checkbox1.onclick = validarCheck1;
 }
 
+
 function validarCheck1(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect1 = btn.value;
 
-  let correcto = answer1.checked; // CREO UNA VARIABLE PARA VER SI LA OPCION CORRECTA ESTA SELECCIONADA
+  let correcto = answer1.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -103,6 +109,7 @@ function validarCheck1(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -113,13 +120,23 @@ function validarCheck1(e) {
       });
   }
 
+
+  localStorage.setItem("answerSelect1", JSON.stringify(answerSelect1));
+
   const valorAq1 = {
     answer1: 10,
     answer2: 0,
     answer3: 0,
   };
   localStorage.setItem("valorAq1", JSON.stringify(valorAq1));
+  
+  
 }
+
+/*function recuperarEleccion(storage) {
+  let eleccion1InStorage = JSON.parse(storage.getItem("validarCheck1"));
+  return eleccion1InStorage;*/
+
 
 //---------------------------SEGUNDA PREGUNTA---------------------------------------------------------------
 
@@ -151,16 +168,16 @@ for (const checkbox2 of check2) {
 
 function validarCheck2(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect2 = btn.value;
 
-  let correcto = answer5.checked; // CREO UNA VARIABLE PARA VER SI LA OPCION CORRECTA ESTA SELECCIONADA
+  let correcto = answer5.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -176,6 +193,7 @@ function validarCheck2(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -187,6 +205,8 @@ function validarCheck2(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect2", JSON.stringify(answerSelect2));
 
   const valorAq2 = {
     answer4: 0,
@@ -226,17 +246,17 @@ for (const checkbox3 of check3) {
 
 function validarCheck3(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect3 = btn.value;
 
-  let correcto = answer7.checked; // CREO UNA VARIABLE PARA VER SI LA OPCION CORRECTA ESTA SELECCIONADA
+  let correcto = answer7.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -252,6 +272,7 @@ function validarCheck3(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -263,6 +284,8 @@ function validarCheck3(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect3", JSON.stringify(answerSelect3));
 
   const valorAq3 = {
     answer7: 10,
@@ -276,9 +299,9 @@ function validarCheck3(e) {
 //---------------------------CUARTA PREGUNTA---------------------------------------------------------------
 
 let check4 = document.getElementsByClassName("check4"); 
-let answer10 = document.getElementById("gridRadios10");
+let answer10 = document.getElementsByClassName("answer10");
 let answer11 = document.getElementsByClassName("answer11");
-let answer12 = document.getElementsByClassName("answer12");
+let answer12 = document.getElementById("gridRadios12");
 
 function recuperarQ4(storage) {
   let q4InStorage = JSON.parse(storage.getItem("question4"));
@@ -303,17 +326,17 @@ for (const checkbox4 of check4) {
 
 function validarCheck4(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect4 = btn.value;
 
   let correcto = answer12.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -329,6 +352,7 @@ function validarCheck4(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -340,6 +364,9 @@ function validarCheck4(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect4", JSON.stringify(answerSelect4));
+
 
   const valorAq4 = {
     answer10: 0,
@@ -354,8 +381,8 @@ function validarCheck4(e) {
 //---------------------------QUINTA PREGUNTA---------------------------------------------------------------
 
 let check5 = document.getElementsByClassName("check5"); 
-let answer13 = document.getElementById("gridRadios13");
-let answer14 = document.getElementsByClassName("answer14");
+let answer13 = document.getElementsByClassName("answer13");
+let answer14 = document.getElementById("gridRadios14");
 let answer15 = document.getElementsByClassName("answer15");
 
 function recuperarQ5(storage) {
@@ -381,17 +408,17 @@ for (const checkbox5 of check5) {
 
 function validarCheck5(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect5 = btn.value;
 
   let correcto = answer14.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -407,6 +434,7 @@ function validarCheck5(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -418,6 +446,9 @@ function validarCheck5(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect5", JSON.stringify(answerSelect5));
+
 
   const valorAq5 = {
     answer13: 0,
@@ -432,9 +463,9 @@ function validarCheck5(e) {
 //---------------------------SEXTA PREGUNTA---------------------------------------------------------------
 
 let check6 = document.getElementsByClassName("check6"); 
-let answer16 = document.getElementById("gridRadios16");
+let answer16 = document.getElementsByClassName("answer16");
 let answer17 = document.getElementsByClassName("answer17");
-let answer18 = document.getElementsByClassName("answer18");
+let answer18 = document.getElementById("gridRadios18");
 
 function recuperarQ6(storage) {
   let q6InStorage = JSON.parse(storage.getItem("question6"));
@@ -459,17 +490,17 @@ for (const checkbox6 of check6) {
 
 function validarCheck6(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect6 = btn.value;
 
   let correcto = answer18.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -485,6 +516,7 @@ function validarCheck6(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -496,6 +528,9 @@ function validarCheck6(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect6", JSON.stringify(answerSelect6));
+
 
   const valorAq6 = {
     answer16: 0,
@@ -509,8 +544,8 @@ function validarCheck6(e) {
 //---------------------------SEPTIMA PREGUNTA---------------------------------------------------------------
 
 let check7 = document.getElementsByClassName("check7"); 
-let answer19 = document.getElementById("gridRadios19");
-let answer20 = document.getElementsByClassName("answer20");
+let answer19 = document.getElementsByClassName("answer19");
+let answer20 = document.getElementById("gridRadios20");
 let answer21 = document.getElementsByClassName("answer21");
 
 function recuperarQ7(storage) {
@@ -536,17 +571,17 @@ for (const checkbox7 of check7) {
 
 function validarCheck7(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect7 = btn.value;
 
   let correcto = answer20.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -562,6 +597,7 @@ function validarCheck7(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -573,6 +609,9 @@ function validarCheck7(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect7", JSON.stringify(answerSelect7));
+
 
   const valorAq7 = {
     answer19: 0,
@@ -614,17 +653,17 @@ for (const checkbox8 of check8) {
 
 function validarCheck8(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect8 = btn.value;
 
   let correcto = answer22.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -640,6 +679,7 @@ function validarCheck8(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -652,7 +692,10 @@ function validarCheck8(e) {
       });
   }
 
-  const valorAq8 = {      //reveer respuesta correcta para guardarla
+
+  localStorage.setItem("answerSelect8", JSON.stringify(answerSelect8));
+  
+  const valorAq8 = {
     answer22: 10,
     answer23: 0,
     answer24: 0,
@@ -664,9 +707,9 @@ function validarCheck8(e) {
 //---------------------------NOVENA PREGUNTA---------------------------------------------------------------
 
 let check9 = document.getElementsByClassName("check9"); 
-let answer25 = document.getElementById("gridRadios25");
+let answer25 = document.getElementsByClassName("answer25");
 let answer26 = document.getElementsByClassName("answer26");
-let answer27 = document.getElementsByClassName("answer27");
+let answer27 = document.getElementById("gridRadios27");
 
 function recuperarQ9(storage) {
   let q9InStorage = JSON.parse(storage.getItem("question9"));
@@ -691,17 +734,17 @@ for (const checkbox9 of check9) {
 
 function validarCheck9(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect9 = btn.value;
 
   let correcto = answer27.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -717,6 +760,7 @@ function validarCheck9(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -728,6 +772,8 @@ function validarCheck9(e) {
         }
       });
   }
+
+  localStorage.setItem("answerSelect9", JSON.stringify(answerSelect9));
 
   const valorAq9 = {
     answer25: 0,
@@ -741,8 +787,8 @@ function validarCheck9(e) {
 //---------------------------DECIMA PREGUNTA---------------------------------------------------------------
 
 let check10 = document.getElementsByClassName("check10"); 
-let answer28 = document.getElementById("gridRadios28");
-let answer29 = document.getElementsByClassName("answer29");
+let answer28 = document.getElementsByClassName("answer28");
+let answer29 = document.getElementById("gridRadios29");
 let answer30 = document.getElementsByClassName("answer30");
 
 function recuperarQ10(storage) {
@@ -768,17 +814,17 @@ for (const checkbox10 of check10) {
 
 function validarCheck10(e) {
   btn = e.target;
-  answerSelect = btn.value;
+  answerSelect10 = btn.value;
 
   let correcto = answer29.checked;
   if (correcto) {
-    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
     swal
       .fire({
         title: "Correcto!",
         text: "10 puntos para " + casaSelect,
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
@@ -794,19 +840,22 @@ function validarCheck10(e) {
       .fire({
         title: "Incorrecto!",
         confirmButtonText: "Siguente",
+        confirmButtonColor: "#D49D73",
       })
       .then((result) => {
         if (result.isConfirmed) {
-          mostrarPregunta11(cambios, "disNon11");
-          let pregOnce = document.getElementById("pregunta11");
-          pregOnce.style.display = "block";
+          sumar(cambios, "disNonFinal");
+          let resultadoFinal = document.getElementById("resultado");
+          resultadoFinal.style.display = "block";
           let pregDiez = document.getElementById("pregunta10");
           pregDiez.style.display = "none";
         }
       });
   }
 
-  const valorAq10 = {      //reveer respuesta correcta para guardarla
+  localStorage.setItem("answerSelect10", JSON.stringify(answerSelect10));
+
+  const valorAq10 = {
     answer28: 0,
     answer29: 10,
     answer30: 0,
@@ -816,20 +865,56 @@ function validarCheck10(e) {
 
 
 
+//---------------------------RESULTADO FINAL---------------------------------------------------------------
+
+
+
+
+const eleccion = [answerSelect1,answerSelect2,answerSelect3,
+  answerSelect4,answerSelect5,answerSelect6,answerSelect7,
+  answerSelect8,answerSelect9,answerSelect10];
+
+let suma;
+
+function sumar(){
+  let suma = answerSelect1 + answerSelect2 + answerSelect3 + 
+  answerSelect4 + answerSelect5 + answerSelect6 + 
+  answerSelect7 + answerSelect8 + answerSelect9 + answerSelect10;
+  
+  console.log(suma)
+}
 
 
 
 
 
+/**function recuperarResultado(storage) {
+  let resultadoInStorage = JSON.parse(storage.getItem());
+  return resultadoInStorage;
+}
 
 
 
-/*let userAnswer1 = validarCheck1;
+let userAnswer1 = validarCheck1;
 let userAnswer2 = validarCheck2;
 let userAnswer3 = validarCheck3;
+let userAnswer4 = validarCheck4;
+let userAnswer5 = validarCheck5;
+let userAnswer6 = validarCheck6;
+let userAnswer7 = validarCheck7;
+let userAnswer8 = validarCheck8;
+let userAnswer9 = validarCheck9;
+let userAnswer10 = validarCheck10;
 
-let resultado = validarCheck1 + validarCheck2 + validarCheck3;
-return resultado*/
+
+
+
+
+validarCheck1 + validarCheck2 + validarCheck3 + 
+validarCheck4 + validarCheck5 + validarCheck6 + 
+validarCheck7 + validarCheck8 + validarCheck9 + validarCheck10;*/
+
+
 
 
 
@@ -838,10 +923,10 @@ return resultado*/
 //---------------------------CURIOSIDADES-----------------------------------------
 
 
-const contenedor = document.querySelector("#contenedorTarjetas");
+/*const contenedor = document.querySelector("#contenedorTarjetas");
 
-const btnCuriosidades = document.querySelector("#curiosidades");
-const btnSalir = document.querySelector("#salir");
+/*const btnCuriosidades = document.querySelector("#curiosidades");
+const btnSalir = document.querySelector("#salir");*/
 
 function crearHTML(array) {
   contenedor.innerHTML = "";
@@ -865,7 +950,7 @@ async function traerInfo() {
   );
   const info = await respuesta.json();
   crearHTML(info);
-}
+}*/
 
 /*btnCuriosidades.addEventListener("click", () => {//MOSTAR CURIOSIDADES
   traerInfo();//AGREGO LA PROPIEDAD ESTILO AL HTML(BLOCK = MOSTRAR) y (NONE= OCULTAR)

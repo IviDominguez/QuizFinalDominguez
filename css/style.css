@@ -155,7 +155,7 @@
     border: solid 5px black;
     border-radius: 12px;
     width: 50rem;
-    height: 16rem;
+    height: 20rem;
     background-image: url(../img/fondoPreguntas2.jpg);
     padding: 3rem 0 0 3rem;
 }
@@ -247,7 +247,7 @@
     border: solid 5px black;
     border-radius: 12px;
     width: 50rem;
-    height: 16rem;
+    height: 20rem;
     background-image: url(../img/fondoPreguntas2.jpg);
     padding: 3rem 0 0 3rem;
 }
@@ -278,7 +278,7 @@
     border: solid 5px black;
     border-radius: 12px;
     width: 50rem;
-    height: 16rem;
+    height: 20rem;
     background-image: url(../img/fondoPreguntas2.jpg);
     padding: 3rem 0 0 3rem;
 }
@@ -418,7 +418,9 @@
     display: none;
 }
 
-
+.disNonFinal{
+    display: none;
+}
 
 
 
