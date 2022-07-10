@@ -305,7 +305,7 @@ function validarCheck4(e) {
   btn = e.target;
   answerSelect = btn.value;
 
-  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  let correcto = answer12.checked;
   if (correcto) {
     //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
@@ -341,10 +341,10 @@ function validarCheck4(e) {
       });
   }
 
-  const valorAq4 = {      //reveer respuesta correcta para guardarla
-    answer7: 10,
-    answer8: 0,
-    answer9: 0,
+  const valorAq4 = {
+    answer10: 0,
+    answer11: 0,
+    answer12: 10,
   };
   localStorage.setItem("valorAq4", JSON.stringify(valorAq4));
 }
@@ -383,7 +383,7 @@ function validarCheck5(e) {
   btn = e.target;
   answerSelect = btn.value;
 
-  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  let correcto = answer14.checked;
   if (correcto) {
     //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
@@ -419,10 +419,10 @@ function validarCheck5(e) {
       });
   }
 
-  const valorAq5 = {      //reveer respuesta correcta para guardarla
-    answer7: 10,
-    answer8: 0,
-    answer9: 0,
+  const valorAq5 = {
+    answer13: 0,
+    answer14: 10,
+    answer15: 0,
   };
   localStorage.setItem("valorAq5", JSON.stringify(valorAq5));
 }
@@ -461,7 +461,7 @@ function validarCheck6(e) {
   btn = e.target;
   answerSelect = btn.value;
 
-  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  let correcto = answer18.checked;
   if (correcto) {
     //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
@@ -497,10 +497,10 @@ function validarCheck6(e) {
       });
   }
 
-  const valorAq6 = {      //reveer respuesta correcta para guardarla
-    answer7: 10,
-    answer8: 0,
-    answer9: 0,
+  const valorAq6 = {
+    answer16: 0,
+    answer17: 0,
+    answer18: 10,
   };
   localStorage.setItem("valorAq6", JSON.stringify(valorAq6));
 }
@@ -538,7 +538,7 @@ function validarCheck7(e) {
   btn = e.target;
   answerSelect = btn.value;
 
-  let correcto = answer7.checked; //REVEER LA RESPUESTA CORRECTA
+  let correcto = answer20.checked;
   if (correcto) {
     //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
     console.log("si");
@@ -574,14 +574,245 @@ function validarCheck7(e) {
       });
   }
 
-  const valorAq7 = {      //reveer respuesta correcta para guardarla
-    answer7: 10,
-    answer8: 0,
-    answer9: 0,
+  const valorAq7 = {
+    answer19: 0,
+    answer20: 10,
+    answer21: 0,
   };
   localStorage.setItem("valorAq7", JSON.stringify(valorAq7));
 }
 
+
+
+//---------------------------OCTAVA PREGUNTA---------------------------------------------------------------
+
+let check8 = document.getElementsByClassName("check8"); 
+let answer22 = document.getElementById("gridRadios22");
+let answer23 = document.getElementsByClassName("answer23");
+let answer24 = document.getElementsByClassName("answer24");
+
+function recuperarQ8(storage) {
+  let q8InStorage = JSON.parse(storage.getItem("question8"));
+  return q8InStorage;
+}
+
+function guardado8(question8) {
+  if (question8) {
+    mostrarPregunta8(cambios, "disNon8");
+  }
+}
+
+function mostrarPregunta8(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox8 of check8) {
+  checkbox8.onclick = validarCheck8;
+}
+
+function validarCheck8(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer22.checked;
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta9(cambios, "disNon9");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregOcho = document.getElementById("pregunta8");
+          pregOcho.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta9(cambios, "disNon9");
+          let pregNueve = document.getElementById("pregunta9");
+          pregNueve.style.display = "block";
+          let pregOcho = document.getElementById("pregunta8");
+          pregOcho.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq8 = {      //reveer respuesta correcta para guardarla
+    answer22: 10,
+    answer23: 0,
+    answer24: 0,
+  };
+  localStorage.setItem("valorAq8", JSON.stringify(valorAq8));
+}
+
+
+//---------------------------NOVENA PREGUNTA---------------------------------------------------------------
+
+let check9 = document.getElementsByClassName("check9"); 
+let answer25 = document.getElementById("gridRadios25");
+let answer26 = document.getElementsByClassName("answer26");
+let answer27 = document.getElementsByClassName("answer27");
+
+function recuperarQ9(storage) {
+  let q9InStorage = JSON.parse(storage.getItem("question9"));
+  return q9InStorage;
+}
+
+function guardado9(question9) {
+  if (question9) {
+    mostrarPregunta9(cambios, "disNon9");
+  }
+}
+
+function mostrarPregunta9(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox9 of check9) {
+  checkbox9.onclick = validarCheck9;
+}
+
+function validarCheck9(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer27.checked;
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta10(cambios, "disNon10");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregNueve = document.getElementById("pregunta9");
+          pregNueve.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta10(cambios, "disNon10");
+          let pregDiez = document.getElementById("pregunta10");
+          pregDiez.style.display = "block";
+          let pregNueve = document.getElementById("pregunta9");
+          pregNueve.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq9 = {
+    answer25: 0,
+    answer26: 0,
+    answer27: 10,
+  };
+  localStorage.setItem("valorAq9", JSON.stringify(valorAq9));
+}
+
+
+//---------------------------DECIMA PREGUNTA---------------------------------------------------------------
+
+let check10 = document.getElementsByClassName("check10"); 
+let answer28 = document.getElementById("gridRadios28");
+let answer29 = document.getElementsByClassName("answer29");
+let answer30 = document.getElementsByClassName("answer30");
+
+function recuperarQ10(storage) {
+  let q10InStorage = JSON.parse(storage.getItem("question10"));
+  return q10InStorage;
+}
+
+function guardado10(question10) {
+  if (question10) {
+    mostrarPregunta10(cambios, "disNon10");
+  }
+}
+
+function mostrarPregunta10(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
+for (const checkbox10 of check10) {
+  checkbox10.onclick = validarCheck10;
+}
+
+function validarCheck10(e) {
+  btn = e.target;
+  answerSelect = btn.value;
+
+  let correcto = answer29.checked;
+  if (correcto) {
+    //SI ES TRUE,ES CORRECTA, SINO INCORRECTO
+    console.log("si");
+    swal
+      .fire({
+        title: "Correcto!",
+        text: "10 puntos para " + casaSelect,
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta11(cambios, "disNon11");
+          /* let pregCuatro = document.getElementById("pregunta4");
+          pregCuatro.style.display = "block"; */
+          let pregDiez = document.getElementById("pregunta10");
+          pregDiez.style.display = "none";
+        }
+      });
+  } else {
+    swal
+      .fire({
+        title: "Incorrecto!",
+        confirmButtonText: "Siguente",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          mostrarPregunta11(cambios, "disNon11");
+          let pregOnce = document.getElementById("pregunta11");
+          pregOnce.style.display = "block";
+          let pregDiez = document.getElementById("pregunta10");
+          pregDiez.style.display = "none";
+        }
+      });
+  }
+
+  const valorAq10 = {      //reveer respuesta correcta para guardarla
+    answer28: 0,
+    answer29: 10,
+    answer30: 0,
+  };
+  localStorage.setItem("valorAq10", JSON.stringify(valorAq10));
+}
 
 
 
