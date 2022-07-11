@@ -72,6 +72,9 @@ let answer3 = document.getElementsByClassName("answer3");
 
 
 
+
+
+
 function recuperarQ1(storage) {
   let q1InStorage = JSON.parse(storage.getItem("validarCheck1"));
   return q1InStorage;
@@ -88,8 +91,11 @@ function validarCheck1(e) {
   btn = e.target;
   answerSelect1 = btn.value;
 
+
   let correcto = answer1.checked;
   if (correcto) {
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -105,6 +111,7 @@ function validarCheck1(e) {
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -120,22 +127,11 @@ function validarCheck1(e) {
       });
   }
 
-
   localStorage.setItem("answerSelect1", JSON.stringify(answerSelect1));
 
-  const valorAq1 = {
-    answer1: 10,
-    answer2: 0,
-    answer3: 0,
-  };
-  localStorage.setItem("valorAq1", JSON.stringify(valorAq1));
-  
-  
+
 }
 
-/*function recuperarEleccion(storage) {
-  let eleccion1InStorage = JSON.parse(storage.getItem("validarCheck1"));
-  return eleccion1InStorage;*/
 
 
 //---------------------------SEGUNDA PREGUNTA---------------------------------------------------------------
@@ -172,6 +168,8 @@ function validarCheck2(e) {
 
   let correcto = answer5.checked;
   if (correcto) {
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -189,6 +187,7 @@ function validarCheck2(e) {
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -208,12 +207,7 @@ function validarCheck2(e) {
 
   localStorage.setItem("answerSelect2", JSON.stringify(answerSelect2));
 
-  const valorAq2 = {
-    answer4: 0,
-    answer5: 10,
-    answer6: 0,
-  };
-  localStorage.setItem("valorAq2", JSON.stringify(valorAq2));
+
 }
 
 //---------------------------TERCER PREGUNTA---------------------------------------------------------------
@@ -250,7 +244,8 @@ function validarCheck3(e) {
 
   let correcto = answer7.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -261,13 +256,13 @@ function validarCheck3(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta4(cambios, "disNon4");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregTres = document.getElementById("pregunta3");
           pregTres.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -287,12 +282,7 @@ function validarCheck3(e) {
 
   localStorage.setItem("answerSelect3", JSON.stringify(answerSelect3));
 
-  const valorAq3 = {
-    answer7: 10,
-    answer8: 0,
-    answer9: 0,
-  };
-  localStorage.setItem("valorAq3", JSON.stringify(valorAq3));
+
 }
 
 
@@ -330,7 +320,8 @@ function validarCheck4(e) {
 
   let correcto = answer12.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -341,13 +332,13 @@ function validarCheck4(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta5(cambios, "disNon5");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregCuatro = document.getElementById("pregunta4");
           pregCuatro.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -368,12 +359,7 @@ function validarCheck4(e) {
   localStorage.setItem("answerSelect4", JSON.stringify(answerSelect4));
 
 
-  const valorAq4 = {
-    answer10: 0,
-    answer11: 0,
-    answer12: 10,
-  };
-  localStorage.setItem("valorAq4", JSON.stringify(valorAq4));
+
 }
 
 
@@ -412,7 +398,8 @@ function validarCheck5(e) {
 
   let correcto = answer14.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -423,13 +410,13 @@ function validarCheck5(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta6(cambios, "disNon6");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregCinco = document.getElementById("pregunta5");
           pregCinco.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -450,12 +437,7 @@ function validarCheck5(e) {
   localStorage.setItem("answerSelect5", JSON.stringify(answerSelect5));
 
 
-  const valorAq5 = {
-    answer13: 0,
-    answer14: 10,
-    answer15: 0,
-  };
-  localStorage.setItem("valorAq5", JSON.stringify(valorAq5));
+
 }
 
 
@@ -494,7 +476,8 @@ function validarCheck6(e) {
 
   let correcto = answer18.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -505,13 +488,13 @@ function validarCheck6(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta7(cambios, "disNon7");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregSeis = document.getElementById("pregunta6");
           pregSeis.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -532,12 +515,7 @@ function validarCheck6(e) {
   localStorage.setItem("answerSelect6", JSON.stringify(answerSelect6));
 
 
-  const valorAq6 = {
-    answer16: 0,
-    answer17: 0,
-    answer18: 10,
-  };
-  localStorage.setItem("valorAq6", JSON.stringify(valorAq6));
+
 }
 
 
@@ -575,7 +553,8 @@ function validarCheck7(e) {
 
   let correcto = answer20.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -586,13 +565,13 @@ function validarCheck7(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta8(cambios, "disNon8");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregSiete = document.getElementById("pregunta7");
           pregSiete.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -613,12 +592,7 @@ function validarCheck7(e) {
   localStorage.setItem("answerSelect7", JSON.stringify(answerSelect7));
 
 
-  const valorAq7 = {
-    answer19: 0,
-    answer20: 10,
-    answer21: 0,
-  };
-  localStorage.setItem("valorAq7", JSON.stringify(valorAq7));
+
 }
 
 
@@ -657,7 +631,8 @@ function validarCheck8(e) {
 
   let correcto = answer22.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -668,13 +643,13 @@ function validarCheck8(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta9(cambios, "disNon9");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregOcho = document.getElementById("pregunta8");
           pregOcho.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -694,13 +669,10 @@ function validarCheck8(e) {
 
 
   localStorage.setItem("answerSelect8", JSON.stringify(answerSelect8));
-  
-  const valorAq8 = {
-    answer22: 10,
-    answer23: 0,
-    answer24: 0,
-  };
-  localStorage.setItem("valorAq8", JSON.stringify(valorAq8));
+
+
+
+
 }
 
 
@@ -738,7 +710,8 @@ function validarCheck9(e) {
 
   let correcto = answer27.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -749,13 +722,13 @@ function validarCheck9(e) {
       .then((result) => {
         if (result.isConfirmed) {
           mostrarPregunta10(cambios, "disNon10");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+
           let pregNueve = document.getElementById("pregunta9");
           pregNueve.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -775,12 +748,8 @@ function validarCheck9(e) {
 
   localStorage.setItem("answerSelect9", JSON.stringify(answerSelect9));
 
-  const valorAq9 = {
-    answer25: 0,
-    answer26: 0,
-    answer27: 10,
-  };
-  localStorage.setItem("valorAq9", JSON.stringify(valorAq9));
+
+
 }
 
 
@@ -790,6 +759,14 @@ let check10 = document.getElementsByClassName("check10");
 let answer28 = document.getElementsByClassName("answer28");
 let answer29 = document.getElementById("gridRadios29");
 let answer30 = document.getElementsByClassName("answer30");
+
+
+function mostrarResultado(array, clase) {   //funcion para el resultado
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
+
 
 function recuperarQ10(storage) {
   let q10InStorage = JSON.parse(storage.getItem("question10"));
@@ -818,7 +795,8 @@ function validarCheck10(e) {
 
   let correcto = answer29.checked;
   if (correcto) {
-    console.log("si");
+
+    console.log(10 + "puntos");
     swal
       .fire({
         title: "Correcto!",
@@ -828,14 +806,14 @@ function validarCheck10(e) {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          mostrarPregunta11(cambios, "disNon11");
-          /* let pregCuatro = document.getElementById("pregunta4");
-          pregCuatro.style.display = "block"; */
+          mostrarResultado(cambios, "disNonFinal");
+
           let pregDiez = document.getElementById("pregunta10");
           pregDiez.style.display = "none";
         }
       });
   } else {
+    console.log(0 + "puntos");
     swal
       .fire({
         title: "Incorrecto!",
@@ -844,9 +822,9 @@ function validarCheck10(e) {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          sumar(cambios, "disNonFinal");
-          let resultadoFinal = document.getElementById("resultado");
-          resultadoFinal.style.display = "block";
+          mostrarResultado(cambios, "disNonFinal");
+          let mostrarResultado = document.getElementById("resultado");
+          mostrarResultado.style.display = "block";
           let pregDiez = document.getElementById("pregunta10");
           pregDiez.style.display = "none";
         }
@@ -855,87 +833,53 @@ function validarCheck10(e) {
 
   localStorage.setItem("answerSelect10", JSON.stringify(answerSelect10));
 
-  const valorAq10 = {
-    answer28: 0,
-    answer29: 10,
-    answer30: 0,
-  };
-  localStorage.setItem("valorAq10", JSON.stringify(valorAq10));
+
+
 }
 
 
 
 //---------------------------RESULTADO FINAL---------------------------------------------------------------
-
-
-
-
-const eleccion = [answerSelect1,answerSelect2,answerSelect3,
-  answerSelect4,answerSelect5,answerSelect6,answerSelect7,
-  answerSelect8,answerSelect9,answerSelect10];
-
-let suma;
-
-function sumar(){
-  let suma = answerSelect1 + answerSelect2 + answerSelect3 + 
-  answerSelect4 + answerSelect5 + answerSelect6 + 
-  answerSelect7 + answerSelect8 + answerSelect9 + answerSelect10;
-  
-  console.log(suma)
+function recuperarRespuestas(storage) {
+  let respuestasInStorage = JSON.parse(storage.getItem("puntajeFinal"));
+  return respuestasInStorage;
 }
 
-
-
-
-
-/**function recuperarResultado(storage) {
-  let resultadoInStorage = JSON.parse(storage.getItem());
-  return resultadoInStorage;
+function guardadoFinal(puntajeFinal) {
+  if (puntajeFinal) {
+    mostrarResultado(cambios, "disNonFinal");
+  }
 }
 
-
-
-let userAnswer1 = validarCheck1;
-let userAnswer2 = validarCheck2;
-let userAnswer3 = validarCheck3;
-let userAnswer4 = validarCheck4;
-let userAnswer5 = validarCheck5;
-let userAnswer6 = validarCheck6;
-let userAnswer7 = validarCheck7;
-let userAnswer8 = validarCheck8;
-let userAnswer9 = validarCheck9;
-let userAnswer10 = validarCheck10;
-
-
-
-
-
-validarCheck1 + validarCheck2 + validarCheck3 + 
-validarCheck4 + validarCheck5 + validarCheck6 + 
-validarCheck7 + validarCheck8 + validarCheck9 + validarCheck10;*/
-
-
-
-
-
+function mostrarResultado(array, clase) {
+  array.forEach((element) => {
+    element.classList.toggle(clase);
+  });
+}
 
 
 //---------------------------CURIOSIDADES-----------------------------------------
 
 
-/*const contenedor = document.querySelector("#contenedorTarjetas");
+const contenedor = document.querySelector("#contenedorTarjetas");
 
-/*const btnCuriosidades = document.querySelector("#curiosidades");
-const btnSalir = document.querySelector("#salir");*/
+const btnCuriosidades = document.querySelector("#curiosidades");
+
+btnCuriosidades.addEventListener("click", () => {//MOSTAR CURIOSIDADES
+  traerInfo();//AGREGO LA PROPIEDAD ESTILO AL HTML
+  //document.getElementById("salir").style.display = "block"; MOSTAR BOTON SALIR
+  document.getElementById("contenedorTarjetas").style.display = "block";//MOSTAR INFO
+  document.getElementById("curiosidades").style.display = "none";//OCULTO BOTON CURIOSIDADAES
+});
 
 function crearHTML(array) {
   contenedor.innerHTML = "";
   array.forEach((info) => {
     const tarjeta = `
-            <div class="col" id="curiosidad" style="block">
+            <div class="col-sm-6" id="curiosidad" style="block">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Sabías que...?</h5>
+                        <h5 class="card_tituto">Sabías que...?</h5>
                         <p class="card-text">${info.contenido}</p>
                     </div>
                 </div>
@@ -950,17 +894,80 @@ async function traerInfo() {
   );
   const info = await respuesta.json();
   crearHTML(info);
-}*/
+}
 
-/*btnCuriosidades.addEventListener("click", () => {//MOSTAR CURIOSIDADES
-  traerInfo();//AGREGO LA PROPIEDAD ESTILO AL HTML(BLOCK = MOSTRAR) y (NONE= OCULTAR)
-  document.getElementById("salir").style.display = "block"; //MOSTAR BOTON SALIR
-  document.getElementById("contenedorTarjetas").style.display = "block";//MOSTAR INFO
-  document.getElementById("curiosidades").style.display = "none";//OCULTO BOTON CURIOSIDADAES
-});
 
-btnSalir.addEventListener("click", () => {//OCULTAR CURIOSIDADES
-  document.getElementById("curiosidades").style.display = "block";//MUESTO BOTON CURIOSIDADAES
-  document.getElementById("salir").style.display = "none";//OCULTO BOTON SALIR
-  document.getElementById("contenedorTarjetas").style.display = "none";//OCULTO INFO
-});*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//array con vallor de cada respuesta
+/*const valorRespuestas = 
+[
+  {
+    answer1: 10,
+
+    answer5: 10,
+
+    answer7: 10,
+
+    answer12: 10,
+
+    answer14: 10,
+
+    answer18: 10,
+
+    answer20: 10,
+
+    answer22: 10,
+
+    answer27: 10,
+
+    answer29: 10,
+
+  },
+
+]
+let suma;
+
+function mostrarSuma(){
+      let suma = answerSelect1 + answerSelect2 + answerSelect3 + 
+            answerSelect4 + answerSelect5 + answerSelect6 + 
+            answerSelect7 + answerSelect8 + answerSelect9 + answerSelect10;
+    }
+
+
+  if (answerSelect1==answer1 || answerSelect2==answer5 || answerSelect3==answer7 || answerSelect4==answer12
+    || answerSelect5==answer14 || answerSelect6==answer18 || answerSelect7==answer20 || answerSelect8==answer22
+    || answerSelect9==answer27 || answerSelect10==answer29)
+    {
+      {
+        let suma = answerSelect1 + answerSelect2 + answerSelect3 + 
+            answerSelect4 + answerSelect5 + answerSelect6 + 
+            answerSelect7 + answerSelect8 + answerSelect9 + answerSelect10;
+        
+        console.log(suma);
+      } 
+    
+  };
+
+
+
+
+
+
+
+const respuestaElegida = [answerSelect1,answerSelect2,answerSelect3,
+  answerSelect4,answerSelect5,answerSelect6,answerSelect7,
+  answerSelect8,answerSelect9,answerSelect10];*/

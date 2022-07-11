@@ -418,33 +418,67 @@
     display: none;
 }
 
+
+/*SECTION 12 RESULTADO FINAL*/
+
+.section_resultados{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.container_resultado{
+    border: solid 5px black;
+    border-radius: 12px;
+    width: 30rem;
+    height: 120rem;
+    background-image: url(../img/fondoPreguntas2.jpg);
+    padding: 3rem 0 0 3rem;
+}
+
+.estilo_resultado{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+    margin-right: 3rem;
+}
+
+.estilo_boton{
+    background-color: antiquewhite;
+    border: solid 2px black;
+    border-radius: 8px;
+    width: 8rem;
+    height: 2rem;
+    color: black;
+    font-size: 16px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
+}
+
+
+
 .disNonFinal{
     display: none;
 }
 
 
 
-.firstMsn{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 0 0 3rem;
-
-}
-
-.msn{
-    width: 30rem;
-    height: 10rem;
-    border: solid 2px black;
-    border-radius: 8px;
-    padding: 0.5rem;
+.disNonTarjeta{
+    display: none;
 }
 
 
 
+.card_titulo{
+    color: black;
+    font-size: 18px;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 700;
 
+}
 
 
 
